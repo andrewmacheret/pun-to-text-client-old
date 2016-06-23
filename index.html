@@ -29,6 +29,12 @@
     }
   }
 
+  function onLogin() {
+    FB.login(function(response) {
+      checkLoginState();
+    }, {scope: 'public_profile,email'});
+  }
+
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
@@ -91,10 +97,7 @@
   the FB.login() function when clicked.
 -->
 
-<img src="fb-login.png" style="cursor: button">
-
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+<img src="fb-login.png" style="cursor: button" onclick="onLogin();">
 
 <div id="status">
 </div>
