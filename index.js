@@ -85,7 +85,7 @@ FB.getLoginStatus(function(response) {
 // successful.  See statusChangeCallback() for when this call is made.
 function testAPI() {
   console.log('Welcome!  Fetching your information.... ');
-  FB.api('/me', {fields: 'email,phone'}, function(response) {
+  FB.api('/me', {fields: 'name,email,phone'}, function(response) {
     console.log('Successful login for: ' + response.name);
     document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
   });
